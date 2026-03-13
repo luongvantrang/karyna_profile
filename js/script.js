@@ -230,12 +230,12 @@ if (btn && inp) {
 
 // ===== RANDOM MUSIC PLAYER =====
 const playlist = [
-  'music/song1.webm',
-  'music/song2.webm'
+  'music/ariana.webm',
+  'music/lowg.webm'
 ];
 
 const musicAudio = document.getElementById('bg-music');
-let musicBtn = document.getElementById('music-btn');
+const musicBtn = document.getElementById('music-btn');
 let isPlaying = false;
 let currentIndex = -1;
 
@@ -255,7 +255,6 @@ function playRandom() {
 }
 
 function toggleMusic() {
-  musicBtn = document.getElementById('music-btn');
   if (!isPlaying) {
     playRandom();
   } else {
@@ -266,7 +265,6 @@ function toggleMusic() {
   }
 }
 
-// Tự động random bài mới khi hết bài
 musicAudio.addEventListener('ended', () => {
   playRandom();
 });
