@@ -144,15 +144,15 @@ body{background:#06060d;color:var(--text-normal);height:100vh;display:flex;flex-
 .moe-text{font-family:"Share Tech Mono",monospace;font-size:11px;font-weight:400;letter-spacing:3px;color:var(--text-muted);margin-bottom:2px;margin-left:20px;text-transform:uppercase;}
 
 /* MUSIC BUTTON + VOLUME */
-.music-widget{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:999999 !important;pointer-events:all !important;}
+.music-widget{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:row;align-items:center;gap:10px;z-index:999999 !important;pointer-events:all !important;}
 
 .music-btn{width:52px;height:52px;border-radius:50%;background:rgba(10,10,20,0.92);border:1px solid rgba(200,210,240,0.2);display:flex;align-items:center;justify-content:center;cursor:none !important;transition:all 0.25s ease;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
 .music-btn:hover{border-color:rgba(200,210,240,0.45);box-shadow:0 4px 20px rgba(0,0,0,0.5),0 0 20px rgba(200,210,240,0.1);transform:scale(1.08);}
 .music-btn i{color:#c0c8e0;font-size:18px;animation:spin 4s linear infinite;}
 .music-btn.paused i{animation:none;opacity:0.3;color:#5a5f72;}
 
-.volume-panel{background:rgba(10,10,20,0.92);border:1px solid rgba(200,210,240,0.15);border-radius:24px;padding:10px 16px;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(8px) scale(0.96);transition:all 0.25s ease;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
-.volume-panel.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:all;}
+.volume-panel{background:rgba(10,10,20,0.92);border:1px solid rgba(200,210,240,0.15);border-radius:24px;padding:10px 16px;display:flex;align-items:center;gap:10px;opacity:0;transform:translateX(10px) scale(0.96);transition:all 0.25s ease;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
+.volume-panel.visible{opacity:1;transform:translateX(0) scale(1);pointer-events:all;}
 
 .vol-icon{color:#5a5f72;font-size:13px;width:14px;text-align:center;flex-shrink:0;}
 
