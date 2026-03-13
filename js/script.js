@@ -115,7 +115,7 @@ document.querySelectorAll("a,button,.game-wrapper,.music-btn,.social-btn,.feedba
 });
 
 // ===== MUSIC PLAYER =====
-const playlist=['music/ariana.webm','music/lowg.webm'];
+const playlist=['music/song1.webm','music/song2.webm'];
 const musicAudio=document.getElementById('bg-music');
 const musicBtn=document.getElementById('music-btn');
 const volumePanel=document.getElementById('volume-panel');
