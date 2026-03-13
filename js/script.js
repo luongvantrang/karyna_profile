@@ -241,4 +241,46 @@ function toggleMusic() {
     musicBtn.classList.add('paused');
   }
 }
+// Random Music Player
+const playlist = [
+  "5atn7vD-1OQ",
+  "GMQuK6ffV4M",
+  "T7ksmtaVeOk"
+];
+
+const musicBtn = document.getElementById('music-btn');
+const ytFrame = document.getElementById('yt-music');
+let isPlaying = false;
+
+function getRandomID() {
+  return playlist[Math.floor(Math.random() * playlist.length)];
+}
+
+function playRandom() {
+  const id = getRandomID();
+  ytFrame.src = `https://www.youtube.com/embed/${id}?autoplay=1&loop=0&controls=0&enablejsapi=1`;
+  isPlaying = true;
+  musicBtn.classList.remove('paused');
+}
+
+function toggleMusic() {
+  if (!isPlaying) {
+    playRandom();
+  } else {
+    ytFrame.src = '';
+    isPlaying = false;
+    musicBtn.classList.add('paused');
+  }
+}
+
+window.addEventListener('message', (e) => {
+  if (typeof e.data === 'string') {
+    try {
+      const data = JSON.parse(e.data);
+      if (data.info && data.info.playerState === 0) {
+        playRandom();
+      }
+    } catch(e) {}
+  }
+});
 
