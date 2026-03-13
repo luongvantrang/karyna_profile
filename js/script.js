@@ -269,8 +269,14 @@ musicAudio.addEventListener('ended', () => {
   playRandom();
 });
 
-// Auto play khi có tương tác đầu tiên
-document.addEventListener('click', function autoStart() {
-  if (!isPlaying) playRandom();
-  document.removeEventListener('click', autoStart);
-}, { once: true });
+// Splash screen auto-play
+const splash = document.getElementById('splash');
+if (splash) {
+  splash.addEventListener('click', () => {
+    splash.style.opacity = '0';
+    splash.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => splash.remove(), 500);
+    if (!isPlaying) playRandom();
+  });
+}
+
