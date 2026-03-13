@@ -230,8 +230,8 @@ if (btn && inp) {
 
 // ===== RANDOM MUSIC PLAYER =====
 const playlist = [
-  'music/ariana.webm',
-  'music/lowg.webm'
+  'music/song1.webm',
+  'music/song2.webm'
 ];
 
 const musicAudio = document.getElementById('bg-music');
@@ -268,3 +268,4 @@ function toggleMusic() {
 musicAudio.addEventListener('ended', () => {
   playRandom();
 });
+
