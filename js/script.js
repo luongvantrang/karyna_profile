@@ -235,9 +235,13 @@ const playlist = [
   "T7ksmtaVeOk"
 ];
 
-const musicBtn = document.getElementById('music-btn');
-const ytFrame = document.getElementById('yt-music');
 let isPlaying = false;
+let musicBtn, ytFrame;
+
+document.addEventListener('DOMContentLoaded', () => {
+  musicBtn = document.getElementById('music-btn');
+  ytFrame = document.getElementById('yt-music');
+});
 
 function getRandomID() {
   return playlist[Math.floor(Math.random() * playlist.length)];
@@ -245,12 +249,15 @@ function getRandomID() {
 
 function playRandom() {
   const id = getRandomID();
-  ytFrame.src = `https://www.youtube.com/embed/${id}?autoplay=1&loop=0&controls=0&enablejsapi=1`;
+  ytFrame.src = `https://www.youtube.com/embed/${id}?autoplay=1&loop=0&controls=0&enablejsapi=1&origin=${location.origin}`;
   isPlaying = true;
-  musicBtn.classList.remove('paused');
+  if (musicBtn) musicBtn.classList.remove('paused');
 }
 
 function toggleMusic() {
+  if (!musicBtn) musicBtn = document.getElementById('music-btn');
+  if (!ytFrame) ytFrame = document.getElementById('yt-music');
+  
   if (!isPlaying) {
     playRandom();
   } else {
@@ -270,3 +277,4 @@ window.addEventListener('message', (e) => {
     } catch(e) {}
   }
 });
+
