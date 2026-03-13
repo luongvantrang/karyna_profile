@@ -173,5 +173,66 @@ body{background:#06060d;color:var(--text-normal);height:100vh;display:flex;flex-
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:1200px){body{height:auto !important;overflow-y:auto !important;padding:20px 0 0}.container{width:92%;max-width:850px;transform:none;padding:25px}.bento-grid{grid-template-columns:1fr;gap:20px}.discord-card-container,.right-column{height:auto}.discord-body-wrapper,.bottom-split-container{flex-grow:0}.activity-card,.feedback-card,.favorite-games-card{min-height:auto !important;padding:15px}}
-@media(max-width:768px){:root{--banner-height:120px;--avatar-top:10px;--avatar-left:15px;--avatar-size:100px;--spacing-avatar-to-name:15px}.container{width:95%;padding:15px}.display-name{font-size:24px;top:45px}.username-row{font-size:12px;top:40px}.poetry-and-counter-row{margin-top:55px;flex-direction:column;align-items:flex-start;gap:10px}.bottom-split-container{grid-template-columns:1fr;gap:12px}.social-grid,.skills-grid{grid-template-columns:repeat(2,1fr);gap:10px}.time-display{font-size:38px}.main-wrapper{padding-bottom:0}.copyright{position:relative;bottom:auto;margin-top:10px;margin-bottom:25px}.pos-q1{display:none !important}.moe-counter-wrapper{position:fixed !important;top:10px;left:10px;transform:scale(0.6) !important;transform-origin:top left;z-index:10000;margin:0}.pos-q3,.pos-q4{width:190px}.pos-q3{left:-40px}.pos-q4{right:-43px}#cursor,#cursor-ring{display:none}}
+
+
+
+/* ===== MOBILE OVERRIDE ===== */
+@media(max-width:1200px){
+  body{height:auto !important;overflow-y:auto !important;padding:20px 0 0;}
+  .container{width:92%;max-width:850px;padding:20px;}
+  .container::before{animation:none;opacity:0;}
+  .common-card-style{will-change:auto;}
+  .bento-grid{grid-template-columns:1fr;gap:16px;}
+  .discord-card-container,.right-column{height:auto;}
+  .discord-body-wrapper,.bottom-split-container{flex-grow:0;}
+  .activity-card,.feedback-card,.favorite-games-card{min-height:auto !important;padding:12px;}
+}
+@media(max-width:768px){
+  :root{--banner-height:110px;--avatar-top:5px;--avatar-left:14px;--avatar-size:86px;--spacing-avatar-to-name:12px;}
+  *,*::before,*::after{cursor:auto !important;}
+  #cursor,#cursor-ring{display:none !important;}
+  .container::before{display:none;}
+  .common-card-style{transition:none;will-change:auto;}
+  #pinkSnowCanvas{display:none;}
+  body{-webkit-overflow-scrolling:touch;}
+  .container{width:100%;padding:12px;border-radius:0;border-left:none;border-right:none;background:rgba(10,10,20,0.97);}
+  .main-wrapper{padding-bottom:0;}
+  .bento-grid{gap:12px;}
+  .discord-banner{border-radius:8px 8px 0 0;}
+  .discord-banner::after{height:50px;}
+  .display-name{font-size:20px;top:30px;letter-spacing:2px;}
+  .username-row{font-size:11px;top:25px;gap:3px;}
+  .pronouns-text{display:none;}
+  .poetry-and-counter-row{margin-top:42px;flex-direction:column;align-items:flex-start;gap:8px;}
+  .poetry-box{font-size:11px;line-height:1.6;}
+  .poetry-box p:nth-child(3){margin-left:100px;}
+  .moe-counter-wrapper{align-self:flex-end;transform:scale(0.75);transform-origin:right top;}
+  .moe-counter-wrapper img{margin-right:0;}
+  .bottom-split-container{display:flex;flex-direction:column;gap:10px;}
+  .activity-card,.feedback-card,.favorite-games-card{min-height:90px !important;padding:10px;}
+  .favorite-games-card{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .game-wrapper::after{display:none;}
+  .activity-image-wrapper{width:60px;height:60px;}
+  .activity-name{font-size:13px;}
+  .activity-state{font-size:11px;}
+  .clock-card{padding:16px;}
+  .time-display{font-size:36px;letter-spacing:2px;}
+  .time-display span{font-size:20px;}
+  .date-display{font-size:10px;letter-spacing:1px;}
+  .bio-card{padding:16px;min-height:auto;}
+  .bio-description{font-size:13px;}
+  .card-bg-gif{opacity:0.08;}
+  .connect-card,.skills-wrapper-card{padding:14px;}
+  .connect-card h3,.skills-wrapper-card h3{margin-bottom:10px;}
+  .social-grid{grid-template-columns:1fr 1fr;gap:8px;}
+  .social-btn{padding:10px;font-size:12px;gap:6px;}
+  .skills-grid{grid-template-columns:1fr 1fr;gap:8px;}
+  .skill-box{padding:10px 12px;animation:none;opacity:1;}
+  .skill-name{font-size:13px;}
+  .overlay-container{display:none;}
+  .music-widget{bottom:16px;right:16px;gap:8px;}
+  .music-btn{width:44px;height:44px;}
+  .music-btn i{font-size:16px;}
+  .vol-slider{width:80px;}
+  .copyright{position:relative;bottom:auto;margin-top:10px;margin-bottom:20px;}
+}
