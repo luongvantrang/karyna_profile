@@ -269,3 +269,8 @@ musicAudio.addEventListener('ended', () => {
   playRandom();
 });
 
+// Auto play khi có tương tác đầu tiên
+document.addEventListener('click', function autoStart() {
+  if (!isPlaying) playRandom();
+  document.removeEventListener('click', autoStart);
+}, { once: true });
