@@ -237,8 +237,8 @@ document.querySelectorAll(".common-card-style").forEach(card => {
 
 // ===== MUSIC PLAYER =====
 const playlist = [
-  'music/ariana.webm',
-  'music/lowg.webm'
+  'music/song1.webm',
+  'music/song2.webm'
 ];
 const musicAudio = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
@@ -276,3 +276,4 @@ if (splash) {
     if (!isPlaying) playRandom();
   });
 }
+
