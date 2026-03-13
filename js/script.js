@@ -227,21 +227,8 @@ if (btn && inp) {
     }, 3000);
   });
 }
-// Music toggle
-const musicBtn = document.getElementById('music-btn');
-const ytFrame = document.getElementById('yt-music');
 
-function toggleMusic() {
-  const src = ytFrame.src;
-  if (musicBtn.classList.contains('paused')) {
-    ytFrame.src = src.replace('autoplay=0', 'autoplay=1');
-    musicBtn.classList.remove('paused');
-  } else {
-    ytFrame.src = src.replace('autoplay=1', 'autoplay=0');
-    musicBtn.classList.add('paused');
-  }
-}
-// Random Music Player
+// ===== RANDOM MUSIC PLAYER =====
 const playlist = [
   "5atn7vD-1OQ",
   "GMQuK6ffV4M",
@@ -283,4 +270,3 @@ window.addEventListener('message', (e) => {
     } catch(e) {}
   }
 });
-
