@@ -230,51 +230,43 @@ if (btn && inp) {
 
 // ===== RANDOM MUSIC PLAYER =====
 const playlist = [
-  "5atn7vD-1OQ",
-  "GMQuK6ffV4M",
-  "T7ksmtaVeOk"
+  'music/song1.webm',
+  'music/song2.webm'
 ];
 
+const musicAudio = document.getElementById('bg-music');
+let musicBtn = document.getElementById('music-btn');
 let isPlaying = false;
-let musicBtn, ytFrame;
+let currentIndex = -1;
 
-document.addEventListener('DOMContentLoaded', () => {
-  musicBtn = document.getElementById('music-btn');
-  ytFrame = document.getElementById('yt-music');
-});
-
-function getRandomID() {
-  return playlist[Math.floor(Math.random() * playlist.length)];
+function getRandomIndex() {
+  let idx;
+  do { idx = Math.floor(Math.random() * playlist.length); }
+  while (idx === currentIndex && playlist.length > 1);
+  return idx;
 }
 
 function playRandom() {
-  const id = getRandomID();
-  ytFrame.src = `https://www.youtube.com/embed/${id}?autoplay=1&loop=0&controls=0&enablejsapi=1&origin=${location.origin}`;
+  currentIndex = getRandomIndex();
+  musicAudio.src = playlist[currentIndex];
+  musicAudio.play().catch(() => {});
   isPlaying = true;
-  if (musicBtn) musicBtn.classList.remove('paused');
+  musicBtn.classList.remove('paused');
 }
 
 function toggleMusic() {
-  if (!musicBtn) musicBtn = document.getElementById('music-btn');
-  if (!ytFrame) ytFrame = document.getElementById('yt-music');
-  
+  musicBtn = document.getElementById('music-btn');
   if (!isPlaying) {
     playRandom();
   } else {
-    ytFrame.src = '';
+    musicAudio.pause();
+    musicAudio.src = '';
     isPlaying = false;
     musicBtn.classList.add('paused');
   }
 }
 
-window.addEventListener('message', (e) => {
-  if (typeof e.data === 'string') {
-    try {
-      const data = JSON.parse(e.data);
-      if (data.info && data.info.playerState === 0) {
-        playRandom();
-      }
-    } catch(e) {}
-  }
+// Tự động random bài mới khi hết bài
+musicAudio.addEventListener('ended', () => {
+  playRandom();
 });
-
