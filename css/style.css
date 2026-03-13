@@ -254,7 +254,6 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-
 .game-wrapper img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -262,11 +261,9 @@ body {
   border-radius: 6px;
   transition: transform 0.2s ease;
 }
-
 .game-wrapper:hover img {
   transform: scale(1.05);
 }
-
 .game-wrapper::after {
   content: attr(data-name);
   position: absolute;
@@ -287,7 +284,6 @@ body {
   pointer-events: none;
   z-index: 100;
 }
-
 .game-wrapper::before {
   content: "";
   position: absolute;
@@ -303,7 +299,6 @@ body {
   pointer-events: none;
   z-index: 100;
 }
-
 .game-wrapper:hover::after,
 .game-wrapper:hover::before {
   opacity: 1;
@@ -621,18 +616,10 @@ body {
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.skill-box:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.skill-box:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.skill-box:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.skill-box:nth-child(4) {
-  animation-delay: 0.4s;
-}
+.skill-box:nth-child(1) { animation-delay: 0.1s; }
+.skill-box:nth-child(2) { animation-delay: 0.2s; }
+.skill-box:nth-child(3) { animation-delay: 0.3s; }
+.skill-box:nth-child(4) { animation-delay: 0.4s; }
 
 .skill-top {
   display: flex;
@@ -647,9 +634,7 @@ body {
   font-size: 14px;
   color: #f2f3f5;
 }
-.skill-name i {
-  font-size: 20px;
-}
+.skill-name i { font-size: 20px; }
 .percent-text {
   font-size: 12px;
   color: var(--text-muted);
@@ -760,243 +745,7 @@ body {
   margin-left: 20px;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 1200px) {
-  body {
-    height: auto !important;
-    overflow-y: auto !important;
-    padding: 20px 0 0 0;
-  }
-  .container {
-    width: 92%;
-    max-width: 850px;
-    transform: none;
-    padding: 25px;
-  }
-  .bento-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .discord-card-container,
-  .right-column {
-    height: auto;
-  }
-  .discord-body-wrapper,
-  .bottom-split-container {
-    flex-grow: 0;
-  }
-  .activity-card,
-  .feedback-card,
-  .favorite-games-card {
-    min-height: auto !important;
-    padding: 15px;
-  }
-  .favorite-games-card img {
-    max-width: 85px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --banner-height: 120px;
-    --avatar-top: 10px;
-    --avatar-left: 15px;
-    --avatar-size: 100px;
-    --spacing-avatar-to-name: 15px;
-  }
-  .container {
-    width: 95%;
-    padding: 15px;
-    border-radius: 20px;
-  }
-  .discord-body-wrapper {
-    padding: 0 15px 15px 15px;
-  }
-  .display-name {
-    font-size: 24px;
-    top: 45px;
-  }
-  .username-row {
-    font-size: 14px;
-    top: 40px;
-  }
-  .poetry-and-counter-row {
-    margin-top: 55px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .poetry-box p:nth-child(3) {
-    margin-left: 160px !important;
-  }
-
-  .bottom-split-container {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    min-width: 0;
-  }
-
-  .discord-section,
-  .activity-card,
-  .feedback-card,
-  .favorite-games-card,
-  .activity-body {
-    min-width: 0;
-  }
-
-  .activity-details {
-    min-width: 0;
-    overflow: hidden;
-    flex: 1;
-  }
-
-  .activity-name,
-  .activity-state,
-  .activity-time-text,
-  .game-time-text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    display: block;
-  }
-
-  .social-grid,
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .social-btn {
-    padding: 14px 10px;
-    font-size: 11px;
-    justify-content: center;
-    height: 100%;
-  }
-  .skill-box {
-    padding: 14px 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-  }
-  .skill-name {
-    font-size: 11px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .time-display {
-    font-size: 40px;
-  }
-  .time-display span {
-    font-size: 20px;
-  }
-  .main-wrapper {
-    padding-bottom: 0px;
-  }
-  .copyright {
-    position: relative;
-    bottom: auto;
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
-  .pos-q1 {
-    display: none !important;
-  }
-  .moe-counter-wrapper {
-    position: fixed !important;
-    top: 10px;
-    left: 10px;
-    transform: scale(0.6) !important;
-    transform-origin: top left;
-    z-index: 10000;
-    margin: 0;
-  }
-  .pos-q3,
-  .pos-q4 {
-    width: 190px;
-  }
-  .pos-q3 {
-    left: -40px;
-  }
-  .pos-q4 {
-    right: -43px;
-  }
-  .status-icon-box {
-    width: 22px;
-    height: 22px;
-    bottom: 2px;
-    right: 2px;
-  }
-  .status-dot {
-    width: 14px;
-    height: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .poetry-box p:nth-child(3) {
-    margin-left: 130px !important;
-  }
-  .activity-image-wrapper {
-    width: 60px;
-    height: 60px;
-  }
-  .small-image {
-    width: 20px;
-    height: 20px;
-  }
-  .activity-name {
-    font-size: 14px;
-  }
-  .activity-state,
-  .game-time-text {
-    font-size: 11px;
-  }
-  .time-display {
-    font-size: 32px;
-  }
-  .poetry-box p:nth-child(3) {
-    margin-left: 20px;
-  }
-  .favorite-games-card img {
-    max-width: 65px;
-  }
-  .favorite-games-card {
-    gap: 6px;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 360px) {
-  :root {
-    --avatar-size: 80px;
-    --banner-height: 100px;
-  }
-  .activity-image-wrapper {
-    width: 50px;
-    height: 50px;
-  }
-  .display-name {
-    font-size: 20px;
-  }
-  .social-grid,
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* ===== MUSIC BUTTON ===== */
 .music-btn {
   position: fixed;
   bottom: 20px;
@@ -1011,11 +760,95 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 99999;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.music-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.2); }
-.music-btn i { color: #fff; font-size: 16px; animation: spin 3s linear infinite; }
-.music-btn.paused i { animation: none; opacity: 0.5; }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.music-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+.music-btn i {
+  color: #fff;
+  font-size: 16px;
+  animation: spin 3s linear infinite;
+}
+.music-btn.paused i {
+  animation: none;
+  opacity: 0.5;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1200px) {
+  body { height: auto !important; overflow-y: auto !important; padding: 20px 0 0 0; }
+  .container { width: 92%; max-width: 850px; transform: none; padding: 25px; }
+  .bento-grid { grid-template-columns: 1fr; gap: 20px; }
+  .discord-card-container, .right-column { height: auto; }
+  .discord-body-wrapper, .bottom-split-container { flex-grow: 0; }
+  .activity-card, .feedback-card, .favorite-games-card { min-height: auto !important; padding: 15px; }
+  .favorite-games-card img { max-width: 85px; margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --banner-height: 120px;
+    --avatar-top: 10px;
+    --avatar-left: 15px;
+    --avatar-size: 100px;
+    --spacing-avatar-to-name: 15px;
+  }
+  .container { width: 95%; padding: 15px; border-radius: 20px; }
+  .discord-body-wrapper { padding: 0 15px 15px 15px; }
+  .display-name { font-size: 24px; top: 45px; }
+  .username-row { font-size: 14px; top: 40px; }
+  .poetry-and-counter-row { margin-top: 55px; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .poetry-box p:nth-child(3) { margin-left: 160px !important; }
+  .bottom-split-container { grid-template-columns: 1fr; gap: 12px; min-width: 0; }
+  .discord-section, .activity-card, .feedback-card, .favorite-games-card, .activity-body { min-width: 0; }
+  .activity-details { min-width: 0; overflow: hidden; flex: 1; }
+  .activity-name, .activity-state, .activity-time-text, .game-time-text {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: block;
+  }
+  .social-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .social-btn { padding: 14px 10px; font-size: 11px; justify-content: center; height: 100%; }
+  .skill-box { padding: 14px 12px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+  .skill-name { font-size: 11px; padding: 0; margin: 0; }
+  .time-display { font-size: 40px; }
+  .time-display span { font-size: 20px; }
+  .main-wrapper { padding-bottom: 0px; }
+  .copyright { position: relative; bottom: auto; margin-top: 10px; margin-bottom: 25px; }
+  .pos-q1 { display: none !important; }
+  .moe-counter-wrapper { position: fixed !important; top: 10px; left: 10px; transform: scale(0.6) !important; transform-origin: top left; z-index: 10000; margin: 0; }
+  .pos-q3, .pos-q4 { width: 190px; }
+  .pos-q3 { left: -40px; }
+  .pos-q4 { right: -43px; }
+  .status-icon-box { width: 22px; height: 22px; bottom: 2px; right: 2px; }
+  .status-dot { width: 14px; height: 14px; }
+}
+
+@media (max-width: 480px) {
+  .poetry-box p:nth-child(3) { margin-left: 130px !important; }
+  .activity-image-wrapper { width: 60px; height: 60px; }
+  .small-image { width: 20px; height: 20px; }
+  .activity-name { font-size: 14px; }
+  .activity-state, .game-time-text { font-size: 11px; }
+  .time-display { font-size: 32px; }
+  .poetry-box p:nth-child(3) { margin-left: 20px; }
+  .favorite-games-card img { max-width: 65px; }
+  .favorite-games-card { gap: 6px; padding: 10px; }
+}
+
+@media (max-width: 360px) {
+  :root { --avatar-size: 80px; --banner-height: 100px; }
+  .activity-image-wrapper { width: 50px; height: 50px; }
+  .display-name { font-size: 20px; }
+  .social-grid, .skills-grid { grid-template-columns: 1fr; }
+}
