@@ -12,25 +12,12 @@
 </head>
 <body>
 
-  <!-- Custom Cursor -->
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
 
-  <!-- Star Background -->
-  <canvas id="starCanvas"></canvas>
-
   <!-- Splash Screen -->
-  <div id="splash" style="
-    position:fixed;inset:0;z-index:9999999;
-    background:#06060d;
-    display:flex;flex-direction:column;
-    align-items:center;justify-content:center;
-    cursor:none;gap:20px;
-    transition:opacity 0.6s ease;">
-    <img src="images/ava.png" style="width:80px;height:80px;border-radius:50%;
-      border:1px solid rgba(200,210,240,0.2);
-      box-shadow:0 0 30px rgba(200,210,240,0.15);
-      filter:grayscale(20%);">
+  <div id="splash" style="position:fixed;inset:0;z-index:9999999;background:#06060d;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:none;gap:20px;transition:opacity 0.6s ease;">
+    <img src="images/ava.png" style="width:80px;height:80px;border-radius:50%;border:1px solid rgba(200,210,240,0.2);box-shadow:0 0 30px rgba(200,210,240,0.12);filter:grayscale(20%);">
     <div id="splash-title">ALT_KARYNA</div>
     <div id="splash-sub">[ click anywhere to enter ]</div>
   </div>
@@ -39,7 +26,6 @@
     <div class="container">
       <div class="bento-grid">
 
-        <!-- LEFT: Discord Card -->
         <div class="discord-card-container common-card-style">
           <div class="discord-header-wrapper">
             <div class="discord-banner" id="discord-banner"></div>
@@ -79,15 +65,9 @@
               <div id="favorite-games-section" class="discord-section">
                 <h3 class="section-header">Favorite Games</h3>
                 <div class="favorite-games-card">
-                  <div class="game-wrapper" data-name="Geometry Dash">
-                    <img src="images/g.jpg" alt="Geometry Dash">
-                  </div>
-                  <div class="game-wrapper" data-name="Osu!">
-                    <img src="images/osu.png" alt="Osu!">
-                  </div>
-                  <div class="game-wrapper" data-name="Roblox">
-                    <img src="images/rb.png" alt="Roblox">
-                  </div>
+                  <div class="game-wrapper" data-name="Geometry Dash"><img src="images/g.jpg" alt="Geometry Dash"></div>
+                  <div class="game-wrapper" data-name="Osu!"><img src="images/osu.png" alt="Osu!"></div>
+                  <div class="game-wrapper" data-name="Roblox"><img src="images/rb.png" alt="Roblox"></div>
                 </div>
               </div>
               <div id="listening-section" class="discord-section">
@@ -105,7 +85,6 @@
           </div>
         </div>
 
-        <!-- RIGHT COLUMN -->
         <div class="right-column">
           <div class="clock-card common-card-style">
             <img src="images/clock.png" class="clock-bg-img" alt="Clock BG">
@@ -117,71 +96,33 @@
           <div class="bio-card common-card-style">
             <img src="images/d363d683a7fee575c7431764bc83e094.gif" class="card-bg-gif" alt="GIF">
             <div class="bio-content">
-              <div class="bio-header-widget">
-                <i class="fas fa-terminal"></i> Introduce
-              </div>
-              <div class="bio-description">
-                Chào cậu, mình là Karyna.<br>
-                Một người không giỏi bày tỏ cảm xúc bằng lời nói...<br>
-                Thay vào đó, chả có j cả:v.
-              </div>
+              <div class="bio-header-widget"><i class="fas fa-terminal"></i> Introduce</div>
+              <div class="bio-description">Chào cậu, mình là Karyna.<br>Một người không giỏi bày tỏ cảm xúc bằng lời nói...<br>Thay vào đó, chả có j cả:v.</div>
             </div>
           </div>
           <div class="connect-card common-card-style">
             <h3>Connections</h3>
             <div class="social-grid">
-              <a href="https://www.facebook.com/kary12233/" class="social-btn" target="_blank">
-                <i class="fab fa-facebook" style="color:#1877F2"></i> FACEBOOK
-              </a>
-              <a href="https://www.tiktok.com/@khangna25" class="social-btn" target="_blank">
-                <i class="fab fa-tiktok" style="color:#ffffff"></i> TIKTOK
-              </a>
-              <a href="http://discord.gg/kFyfeKNrPk" class="social-btn" target="_blank">
-                <i class="fab fa-discord" style="color:#5865F2"></i> SV DISCORD
-              </a>
-              <a href="https://discord.com/users/1013402592757420093" class="social-btn" target="_blank">
-                <i class="fab fa-discord" style="color:#99aab5"></i> MY DISCORD
-              </a>
+              <a href="https://www.facebook.com/kary12233/" class="social-btn" target="_blank"><i class="fab fa-facebook" style="color:#1877F2"></i> FACEBOOK</a>
+              <a href="https://www.tiktok.com/@khangna25" class="social-btn" target="_blank"><i class="fab fa-tiktok" style="color:#ffffff"></i> TIKTOK</a>
+              <a href="http://discord.gg/kFyfeKNrPk" class="social-btn" target="_blank"><i class="fab fa-discord" style="color:#5865F2"></i> SV DISCORD</a>
+              <a href="https://discord.com/users/1013402592757420093" class="social-btn" target="_blank"><i class="fab fa-discord" style="color:#99aab5"></i> MY DISCORD</a>
             </div>
           </div>
           <div class="skills-wrapper-card common-card-style">
             <h3>Learning</h3>
             <div class="skills-grid">
-              <div class="skill-box">
-                <div class="skill-top">
-                  <div class="skill-name"><i class="fab fa-html5" style="color:#e34f26"></i> HTML</div>
-                  <span class="percent-text">0%</span>
-                </div>
-                <div class="progress-bg"><div class="progress-fill" style="width:0%;background:#e34f26"></div></div>
-              </div>
-              <div class="skill-box">
-                <div class="skill-top">
-                  <div class="skill-name"><i class="fab fa-css3-alt" style="color:#4c65ca"></i> CSS</div>
-                  <span class="percent-text">0%</span>
-                </div>
-                <div class="progress-bg"><div class="progress-fill" style="width:0%;background:#264de4"></div></div>
-              </div>
-              <div class="skill-box">
-                <div class="skill-top">
-                  <div class="skill-name"><i class="fab fa-js" style="color:#f7df1e"></i> JS</div>
-                  <span class="percent-text">0%</span>
-                </div>
-                <div class="progress-bg"><div class="progress-fill" style="width:0%;background:#f7df1e"></div></div>
-              </div>
-              <div class="skill-box">
-                <div class="skill-top">
-                  <div class="skill-name"><i class="fas fa-code" style="color:#7090ff"></i> Lua</div>
-                  <span class="percent-text">0%</span>
-                </div>
-                <div class="progress-bg"><div class="progress-fill" style="width:0%;background:#7090ff"></div></div>
-              </div>
+              <div class="skill-box"><div class="skill-top"><div class="skill-name"><i class="fab fa-html5" style="color:#e34f26"></i> HTML</div><span class="percent-text">0%</span></div><div class="progress-bg"><div class="progress-fill" style="width:0%;background:#e34f26"></div></div></div>
+              <div class="skill-box"><div class="skill-top"><div class="skill-name"><i class="fab fa-css3-alt" style="color:#4c65ca"></i> CSS</div><span class="percent-text">0%</span></div><div class="progress-bg"><div class="progress-fill" style="width:0%;background:#264de4"></div></div></div>
+              <div class="skill-box"><div class="skill-top"><div class="skill-name"><i class="fab fa-js" style="color:#f7df1e"></i> JS</div><span class="percent-text">0%</span></div><div class="progress-bg"><div class="progress-fill" style="width:0%;background:#f7df1e"></div></div></div>
+              <div class="skill-box"><div class="skill-top"><div class="skill-name"><i class="fas fa-code" style="color:#7090ff"></i> Lua</div><span class="percent-text">0%</span></div><div class="progress-bg"><div class="progress-fill" style="width:0%;background:#7090ff"></div></div></div>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-    <div class="copyright">© 2026 Karyna — All rights reserved</div>
+    <div class="copyright">© 2026 Karyna</div>
   </div>
 
   <div class="overlay-container">
@@ -191,10 +132,18 @@
   </div>
 
   <canvas id="pinkSnowCanvas"></canvas>
-
   <audio id="bg-music"></audio>
-  <div class="music-btn paused" id="music-btn" onclick="toggleMusic()">
-    <i class="fas fa-music"></i>
+
+  <!-- Music Widget -->
+  <div class="music-widget">
+    <div class="volume-panel" id="volume-panel">
+      <i class="fas fa-volume-down vol-icon" id="vol-icon"></i>
+      <input type="range" class="vol-slider" id="vol-slider" min="0" max="100" value="60">
+      <span class="vol-pct" id="vol-pct">60%</span>
+    </div>
+    <div class="music-btn paused" id="music-btn" onclick="toggleMusic()">
+      <i class="fas fa-music"></i>
+    </div>
   </div>
 
   <script src="js/hieuung.js"></script>
