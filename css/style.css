@@ -762,6 +762,7 @@ body {
   cursor: pointer;
   z-index: 999999 !important;
   pointer-events: all !important;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 .music-btn:hover {
@@ -852,5 +853,6 @@ body {
   .display-name { font-size: 20px; }
   .social-grid, .skills-grid { grid-template-columns: 1fr; }
 }
+
 
 
